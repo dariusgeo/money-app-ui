@@ -1,0 +1,164 @@
+<div class="modal-body">
+  <div class="container">
+
+    <div class="title">
+      <h2 class="center">Transfera usor si simplu prin Orange Money</h2>
+    </div>
+
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" novalidate>
+      <table class="table table-striped">
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block"> Detalii platitor</label>
+          </td>
+          <td class="col-md-4">
+          </td>
+          <td class="col-md-2">
+            <label class="center-block"> Detalii beneficiar</label>
+          </td>
+          <td class="col-md-4">
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_lastname"> Nume*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payer_lastname" id="payer_lastname">
+            <div *ngIf="transactionForm.controls['payer_lastname'].invalid && (transactionForm.controls['payer_lastname'].dirty || transactionForm.controls['payer_lastname'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payer_lastname'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payee_lastname"> Nume*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payee_lastname" id="payee_lastname">
+            <div *ngIf="transactionForm.controls['payee_lastname'].invalid && (transactionForm.controls['payee_lastname'].dirty || transactionForm.controls['payee_lastname'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payee_lastname'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_firstname"> Prenume*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payer_firstname" id="payer_firstname">
+            <div *ngIf="transactionForm.controls['payer_firstname'].invalid && (transactionForm.controls['payer_firstname'].dirty || transactionForm.controls['payer_firstname'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payer_firstname'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payee_firstname"> Prenume*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payee_firstname" id="payee_firstname">
+            <div *ngIf="transactionForm.controls['payee_firstname'].invalid && (transactionForm.controls['payee_firstname'].dirty || transactionForm.controls['payee_firstname'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payee_firstname'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_cnp"> CNP*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payer_cnp" id="payer_cnp">
+            <div *ngIf="transactionForm.controls['payer_cnp'].invalid && (transactionForm.controls['payer_cnp'].dirty || transactionForm.controls['payer_cnp'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payer_cnp'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payee_cnp"> CNP*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payee_cnp" id="payee_cnp">
+            <div *ngIf="transactionForm.controls['payee_cnp'].invalid && (transactionForm.controls['payee_cnp'].dirty || transactionForm.controls['payee_cnp'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payee_cnp'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_iban"> IBAN*:</label>
+          </td>
+          <td class="col-md-4">
+             <input class="form-control" formControlName="payer_iban" id="payer_iban">
+            <div *ngIf="transactionForm.controls['payer_iban'].invalid && (transactionForm.controls['payer_iban'].dirty || transactionForm.controls['payer_iban'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payer_iban'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payee_iban"> IBAN*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="payee_iban" id="payee_iban">
+            <div *ngIf="transactionForm.controls['payee_iban'].invalid && (transactionForm.controls['payee_iban'].dirty || transactionForm.controls['payee_iban'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['payee_iban'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="amount"> Suma*:</label>
+          </td>
+          <td class="col-md-2">
+            <input class="form-control" formControlName="amount" id="amount">
+            <div *ngIf="transactionForm.controls['amount'].invalid && (transactionForm.controls['amount'].dirty || transactionForm.controls['amount'].touched)" class="alert alert-danger">
+              <div *ngIf="transactionForm.controls['amount'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+          <td class="col-md-2">
+            <label class="center-block" for="transactionType"> Moneda*:</label>
+          </td>
+          <td class="col-md-2">
+            <select formControlName="currency" id="currency">
+              <option *ngFor="let currency of currencies; let i = index" [value]="currency.id">
+                {{currency.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="transactionType"> Tip tranzactie*:</label>
+          </td>
+          <td class="col-md-4">
+            <select formControlName="transactionType" id="transactionType">
+              <option *ngFor="let transactionType of transactionTypes; let i = index" [value]="transactionType.id">
+                {{transactionType.name}}
+              </option>
+            </select>
+          </td>
+          <td class="col-md-6">
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-3 text-weight-bold"></td>
+          <td class="col-md-3"></td>
+          <td class="col-md-6"><input type="submit" value="Transfera" class="btn btn-success"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

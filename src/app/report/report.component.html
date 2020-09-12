@@ -1,0 +1,44 @@
+<div class="modal-body">
+  <div class="container">
+
+    <div class="title">
+      <h2 class="center">Transfera usor si simplu prin Orange Money</h2>
+    </div>
+
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit()" novalidate>
+      <table class="table table-striped">
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_cnp"> Introduceti CNP*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="cnp" id="payer_cnp">
+            <div *ngIf="reportForm.controls['cnp'].invalid && (reportForm.controls['cnp'].dirty || reportForm.controls['cnp'].touched)" class="alert alert-danger">
+              <div *ngIf="reportForm.controls['cnp'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-2 text-weight-bold">
+            <label class="center-block" for="payer_cnp"> Introduceti IBAN*:</label>
+          </td>
+          <td class="col-md-4">
+            <input class="form-control" formControlName="iban" id="payer_iban">
+            <div *ngIf="reportForm.controls['iban'].invalid && (reportForm.controls['iban'].dirty || reportForm.controls['iban'].touched)" class="alert alert-danger">
+              <div *ngIf="reportForm.controls['iban'].errors.required">
+                Acest camp este obligatoriu.
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row row-bordered">
+          <td class="col-md-3 text-weight-bold"></td>
+          <td class="col-md-3"></td>
+          <td class="col-md-6"><input type="submit" value="Genereaza raport" class="btn btn-success"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
